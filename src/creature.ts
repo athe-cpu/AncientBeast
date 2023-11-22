@@ -1027,11 +1027,13 @@ export class Creature {
 		return this.stats.initiative * 500 - this.id;
 	}
 
+
 	/**
 	 * @param{number} distance - Integer, Distance in hexagons
 	 * @returns{Hex[]} Array of adjacent hexagons
 	 */
-	adjacentHexes(distance: number): Hex[] {
+
+	  adjacentHexes(distance: number): Hex[] {
 		const hash = hashOffsetCoords;
 		const closed = new Set<number>(this.hexagons.map(hash));
 		const close = (point: Point) => closed.add(hash(point));
